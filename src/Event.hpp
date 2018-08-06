@@ -21,6 +21,7 @@ class Event {
   std::vector<int> _event_sig;
 
  public:
+  Event();
   Event(Particle Electron);
   ~Event();
 

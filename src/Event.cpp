@@ -5,6 +5,8 @@
 /**************************************/
 #include "Event.hpp"
 
+Event::Event() {}
+
 Event::Event(Particle Electron) {
   _electron = Electron;
   Add_Part(Electron);
