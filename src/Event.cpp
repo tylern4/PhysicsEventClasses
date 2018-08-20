@@ -7,8 +7,10 @@
 
 Event::Event() {}
 
-Event::Event(Particle Electron) {
+Event::Event(Particle Electron, TLorentzVector Beam) {
   _electron = Electron;
+  _W = physics::W_calc(Beam, _electron.Particle4Vec());
+  _Q2 = physics::Q2_calc(Beam, _electron.Particle4Vec());
   Add_Part(Electron);
 }
 Event::~Event() {}
@@ -28,5 +30,12 @@ void Event::PrintSigniture() {
   std::vector<int> s = Signiture();
   std::cout << "Event Signiture: ";
   for (auto e : s) std::cout << e << "\t";
+  std::cout << std::endl;
+}
+
+void Event::PrintWQ2() {
+  std::vector<int> s = Signiture();
+  std::cout << _W << "," << _Q2 << ",";
+  for (auto e : s) std::cout << e << ":";
   std::cout << std::endl;
 }

@@ -13,8 +13,9 @@
 
 class Event {
  private:
-  Particle _beam;
-  Particle _gamma;
+  double _W = 0.0;
+  double _Q2 = 0.0;
+  TLorentzVector _gamma;
   Particle _electron;
   std::vector<Particle> _events;
   std::vector<int> _PID;
@@ -22,13 +23,14 @@ class Event {
 
  public:
   Event();
-  Event(Particle Electron);
+  Event(Particle Electron, TLorentzVector Beam);
   ~Event();
 
   void Add_Part(Particle p);
 
   std::vector<int> Signiture();
   void PrintSigniture();
+  void PrintWQ2();
 };
 
 #endif
