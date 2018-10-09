@@ -2,6 +2,7 @@
 obj/*
 lib/*
 bin/*
+build
 
 # Prerequisites
 *.d

@@ -11,12 +11,11 @@ SRCDIR   = src
 OBJDIR   = obj
 LIBDIR 	 = lib
 BINDIR	 = bin
-TARGET 	 = Event
+TARGET 	 = Skim
 
 SRC = $(wildcard $(SRCDIR)/*.cpp)
 
 OBJECTS  = $(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
-LIBOUT =	$(LIBDIR)/libEvent.so
 
 .PHONY: all clean
 
