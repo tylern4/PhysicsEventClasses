@@ -15,11 +15,12 @@ int main(int argc, char **argv) {
     infile = argv[1];
     outfile = argv[2];
   } else {
-    std::cerr << "Error: \n";
-    std::cerr << "\tNeed input file and output file\n";
-    std::cerr << "Usage:\n\t";
-    std::cerr << argv[0] << " /path/to/unskimmed.root\nor:\n\t";
-    std::cerr << argv[0] << " /path/to/unskimmed.root /path/to/skimmed.root\n";
+    std::cerr << BOLDRED << "Error: \n";
+    std::cerr << BOLDWHITE << "\tNeed input file and output file\n";
+    std::cerr << BOLDBLUE << "Usage:\n\t";
+    std::cerr << RESET << argv[0] << " /path/to/unskimmed.root\n";
+    std::cerr << BOLDBLUE << "or:\n\t";
+    std::cerr << RESET << argv[0] << " /path/to/unskimmed.root /path/to/skimmed.root\n";
     std::cerr << std::endl;
     return 1;
   }

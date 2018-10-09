@@ -26,7 +26,8 @@ Skim::~Skim() {}
 
 void Skim::Basic() {
   bool electron_cuts;
-  std::cout << "Skimming file " << fin << "\t==>\t" << fout << std::endl;
+  std::cout << BOLDWHITE << "Skimming file " << BOLDGREEN << fin << BOLDBLUE << " ==> " << BOLDGREEN << fout << RESET
+            << std::endl;
 
   int num_of_events = (int)chain->GetEntries();
 
