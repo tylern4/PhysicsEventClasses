@@ -20,6 +20,7 @@ Skim::Skim(std::string input, std::string output) {
   getBranches(chain);
 
   RootOutputFile = new TFile(fout.c_str(), "RECREATE");
+  RootOutputFile->SetCompressionLevel(5);
 }
 Skim::~Skim() {}
 

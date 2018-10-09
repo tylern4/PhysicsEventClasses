@@ -92,24 +92,9 @@ int nphe[MAX_PARTS];     //[cc_part]
 float cc_t[MAX_PARTS];   //[cc_part]
 float cc_r[MAX_PARTS];   //[cc_part]
 float cc_c2[MAX_PARTS];  //[cc_part]
-int lac_part;
-int lec_sect[MAX_PARTS];    //[lac_part]
-int lec_hit[MAX_PARTS];     //[lac_part]
-int lec_stat[MAX_PARTS];    //[lac_part]
-float lec_etot[MAX_PARTS];  //[lac_part]
-float lec_ein[MAX_PARTS];   //[lac_part]
-float lec_t[MAX_PARTS];     //[lac_part]
-float lec_r[MAX_PARTS];     //[lac_part]
-float lec_x[MAX_PARTS];     //[lac_part]
-float lec_y[MAX_PARTS];     //[lac_part]
-float lec_z[MAX_PARTS];     //[lac_part]
-float lec_c2[MAX_PARTS];    //[lac_part]
-int st_part;
-int st_status[MAX_PARTS];  //[st_part]
-float st_time[MAX_PARTS];  //[st_part]
-float st_rtrk[MAX_PARTS];  //[st_part]
 
 void getBranches(TTree *myTree) {
+  myTree->SetBranchStatus("*", 0);
   myTree->SetBranchAddress("npart", &npart);
   myTree->SetBranchAddress("evstat", &evstat);
   myTree->SetBranchAddress("intt", &intt);
@@ -192,23 +177,6 @@ void getBranches(TTree *myTree) {
   myTree->SetBranchAddress("cc_t", cc_t);
   myTree->SetBranchAddress("cc_r", cc_r);
   myTree->SetBranchAddress("cc_c2", cc_c2);
-  myTree->SetBranchAddress("lac_part", &lac_part);
-  myTree->SetBranchAddress("lec_sect", &lec_sect);
-  myTree->SetBranchAddress("lec_hit", &lec_hit);
-  myTree->SetBranchAddress("lec_stat", &lec_stat);
-  myTree->SetBranchAddress("lec_etot", &lec_etot);
-  myTree->SetBranchAddress("lec_ein", &lec_ein);
-  myTree->SetBranchAddress("lec_t", &lec_t);
-  myTree->SetBranchAddress("lec_r", &lec_r);
-  myTree->SetBranchAddress("lec_x", &lec_x);
-  myTree->SetBranchAddress("lec_y", &lec_y);
-  myTree->SetBranchAddress("lec_z", &lec_z);
-  myTree->SetBranchAddress("lec_c2", &lec_c2);
-  myTree->SetBranchAddress("st_part", &st_part);
-  myTree->SetBranchAddress("st_status", &st_status);
-  myTree->SetBranchAddress("st_time", &st_time);
-  myTree->SetBranchAddress("st_rtrk", &st_rtrk);
-  myTree->SetBranchStatus("*", 1);
 }
 
 #endif
