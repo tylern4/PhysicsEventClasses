@@ -2,27 +2,27 @@
 
 ## Build with Make
 
-'''
+```shell
 make
-'''
+```
 
 ## Build with cmake
 
-'''
+```shell
 mkdir build && cd build
 cmake ..
 make
-'''
+```
 
 ## Running skim
 
-'''
+```shell
 ./Skim /path/to/files/to/unskimmed.root
-'''
+```
 Or using environment to set conditions
-'''
+```shell
 GAPRT=2 ./Skim /path/to/files/to/unskimmed.root
-'''
+```
 
 ### Size reduction
 
