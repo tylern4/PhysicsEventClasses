@@ -30,7 +30,6 @@ void Skim::Basic() {
             << std::endl;
 
   int num_of_events = (int)chain->GetEntries();
-
   // Make a copy of the chain we created earlier
   TTree *skim = chain->CloneTree(0);
 
@@ -51,6 +50,9 @@ void Skim::Basic() {
     electron_cuts &= (sc[0] > 0);
     // 0th particle hit DC
     electron_cuts &= (dc[0] > 0);
+
+    electron_cuts &= (dc_stat[dc[0] - 1] > 0);
+    electron_cuts &= (stat[0] > 0);
 
     if (electron_cuts) {
       // If the event passes all the cuts then fill the skim branch
