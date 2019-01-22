@@ -6,14 +6,14 @@
 #include "particle.hpp"
 // Constructor and destructor methods
 Particle::Particle() {
-  _vec4 = TLorentzVector(-99.0, -99.0, -99.0, -99.0);
-  _vertex = TVector3(-99.0, -99.0, -99.0);
-  _cos_angle = TVector3(-99.0, -99.0, -99.0);
+  _vec4 = TLorentzVector(std::nanf("-99"), std::nanf("-99"), std::nanf("-99"), std::nanf("-99"));
+  _vertex = TVector3(std::nanf("-99"), std::nanf("-99"), std::nanf("-99"));
+  _cos_angle = TVector3(std::nanf("-99"), std::nanf("-99"), std::nanf("-99"));
 }
 Particle::Particle(double p, double cx, double cy, double cz, int pid) {
   _p = p;
   _PID = pid;
-  _vertex = TVector3(-99.0, -99.0, -99.0);
+  _vertex = TVector3(std::nanf("-99"), std::nanf("-99"), std::nanf("-99"));
   _mass = physics::Get_Mass(_PID);
   _cos_angle = TVector3(cx, cy, cz);
   _vec4 = physics::fourVec(_p, cx, cy, cz, _PID);
