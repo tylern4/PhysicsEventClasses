@@ -18,12 +18,12 @@ void run(std::string input, std::string output) {
   auto chain = new TChain("h10");
   chain->Add(input.c_str());
   auto data = new Branches(chain);
-  int num_of_events = (int)chain->GetEntries();
+  unsigned int num_of_events = (int)chain->GetEntries();
   auto mm_neutron = new TH1F("mm_neutron", "Missing Mass Neutron", 500, 0, 3.0);
   auto w_hist = new TH1D("W", "W for #pi^{+} N", 500, 0, 3.0);
   auto start_full = std::chrono::high_resolution_clock::now();
 
-  for (int current_event = 0; current_event < num_of_events; current_event++) {
+  for (unsigned int current_event = 0; current_event < num_of_events; current_event++) {
     chain->GetEntry(current_event);
     if ((current_event % 100000) == 0) {
       std::chrono::duration<double> elapsed = (std::chrono::high_resolution_clock::now() - start_full);
