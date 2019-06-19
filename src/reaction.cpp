@@ -5,7 +5,7 @@
 /**************************************/
 #include "reaction.hpp"
 
-Reaction::Reaction(std::shared_ptr<Branches6> data) {
+Reaction::Reaction(std::shared_ptr<Branches12> data) {
   _data = data;
   _beam = std::make_unique<TLorentzVector>();
   if (getenv("BEAM_E") != NULL) _beam_energy = atof(getenv("BEAM_E"));
@@ -61,12 +61,12 @@ void Reaction::SetNeutron(int i) {
 }
 
 void Reaction::SetOther(int i) {
-  if (_data->id(i) == NEUTRON)
+  if (_data->pid(i) == NEUTRON)
     SetNeutron(i);
   else {
     _numOther++;
     _hasOther = true;
-    _other->SetXYZM(_data->px(i), _data->py(i), _data->pz(i), _mass_map[_data->id(i)]);
+    _other->SetXYZM(_data->px(i), _data->py(i), _data->pz(i), _mass_map[_data->pid(i)]);
   }
 }
 

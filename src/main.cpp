@@ -3,20 +3,22 @@
 #include <future>
 #include <thread>
 
-#define NUM_THREADS 8
+#define NUM_THREADS 4
 
 int main(int argc, char **argv) {
-  auto start = std::chrono::high_resolution_clock::now();
   ROOT::EnableThreadSafety();
+  auto start = std::chrono::high_resolution_clock::now();
   std::vector<std::vector<std::string>> infilenames(NUM_THREADS);
   std::string outfilename;
   if (argc >= 2) {
     outfilename = argv[1];
-    for (int i = 2; i < argc; i++) infilenames[i % NUM_THREADS].push_back(argv[i]);
+    for (int i = 2; i < argc; i++) {
+      infilenames[i % NUM_THREADS].push_back(argv[i]);
+    }
   } else {
     return 1;
   }
-
+  
   std::future<size_t> t[NUM_THREADS];
   size_t events = 0;
 

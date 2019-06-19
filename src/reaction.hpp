@@ -15,7 +15,7 @@
 
 class Reaction {
  private:
-  std::shared_ptr<Branches6> _data;
+  std::shared_ptr<Branches12> _data;
 
   std::map<int, double> _mass_map = {{PROTON, MASS_P}, {-PROTON, MASS_P},  {NEUTRON, MASS_N},  {PIP, MASS_PIP},
                                      {PIM, MASS_PIM},  {PI0, MASS_PI0},    {KP, MASS_KP},      {KM, MASS_KM},
@@ -55,7 +55,7 @@ class Reaction {
   void SetElec();
 
  public:
-  Reaction(std::shared_ptr<Branches6> data);
+  Reaction(std::shared_ptr<Branches12> data);
   ~Reaction();
 
   void SetProton(int i);
