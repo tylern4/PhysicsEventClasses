@@ -11,9 +11,9 @@
 #include "TChain.h"
 #include "constants.hpp"
 
-class Branches {
+class Branches6 {
  private:
-  TChain *myTree;
+  std::shared_ptr<TChain> _tree;
   bool _MC = false;
   int _npart;
   int _evstat;
@@ -111,10 +111,8 @@ class Branches {
   int _flagspart[MAX_PARTS];  //[nprt]
 
  public:
-  Branches(TChain *tree);
-  Branches(TChain *tree, bool MC);
-  Branches(const Branches &b);
-  ~Branches(){};
+  Branches6(std::shared_ptr<TChain> tree);
+  ~Branches6(){};
   void init();
   int npart();
   int evstat();
@@ -137,84 +135,6 @@ class Branches {
   int lac_part();
   int st_part();
   int nprt();
-
-  std::vector<int> id();
-  std::vector<int> stat();
-  std::vector<int> dc();
-  std::vector<int> cc();
-  std::vector<int> sc();
-  std::vector<int> ec();
-  std::vector<int> lec();
-  std::vector<int> ccst();
-  std::vector<float> p();
-  std::vector<float> px();
-  std::vector<float> py();
-  std::vector<float> pz();
-  std::vector<float> m();
-  std::vector<int> q();
-  std::vector<float> b();
-  std::vector<float> cx();
-  std::vector<float> cy();
-  std::vector<float> cz();
-  std::vector<float> vx();
-  std::vector<float> vy();
-  std::vector<float> vz();
-  std::vector<int> dc_sect();
-  std::vector<int> dc_trk();
-  std::vector<int> dc_stat();
-  std::vector<float> dc_vx();
-  std::vector<float> dc_vy();
-  std::vector<float> dc_vz();
-  std::vector<float> dc_vr();
-  std::vector<float> dc_xsc();
-  std::vector<float> dc_ysc();
-  std::vector<float> dc_zsc();
-  std::vector<float> dc_cxsc();
-  std::vector<float> dc_cysc();
-  std::vector<float> dc_czsc();
-  std::vector<float> dc_c2();
-  std::vector<int> ec_stat();
-  std::vector<int> ec_sect();
-  std::vector<int> ec_whol();
-  std::vector<int> ec_inst();
-  std::vector<int> ec_oust();
-  std::vector<float> etot();
-  std::vector<float> ec_ei();
-  std::vector<float> ec_eo();
-  std::vector<float> ec_t();
-  std::vector<float> ec_r();
-  std::vector<float> ech_x();
-  std::vector<float> ech_y();
-  std::vector<float> ech_z();
-  std::vector<float> ec_m2();
-  std::vector<float> ec_m3();
-  std::vector<float> ec_m4();
-  std::vector<float> ec_c2();
-  std::vector<int> sc_sect();
-  std::vector<int> sc_hit();
-  std::vector<int> sc_pd();
-  std::vector<int> sc_stat();
-  std::vector<float> edep();
-  std::vector<float> sc_t();
-  std::vector<float> sc_r();
-  std::vector<float> sc_c2();
-  std::vector<int> cc_sect();
-  std::vector<int> cc_hit();
-  std::vector<int> cc_segm();
-  std::vector<int> nphe();
-  std::vector<float> cc_t();
-  std::vector<float> cc_r();
-  std::vector<float> cc_c2();
-  //////////
-  std::vector<int> pidpart();
-  std::vector<float> xpart();
-  std::vector<float> ypart();
-  std::vector<float> zpart();
-  std::vector<float> epart();
-  std::vector<float> pxpart();
-  std::vector<float> pypart();
-  std::vector<float> pzpart();
-  std::vector<float> qpart();
 
   int id(int i);
   int stat(int i);

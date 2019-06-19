@@ -5,7 +5,7 @@
 /**************************************/
 #include "reaction.hpp"
 
-Reaction::Reaction(Branches* data) {
+Reaction::Reaction(std::shared_ptr<Branches6> data) {
   _data = data;
   _beam = std::make_unique<TLorentzVector>();
   if (getenv("BEAM_E") != NULL) _beam_energy = atof(getenv("BEAM_E"));
