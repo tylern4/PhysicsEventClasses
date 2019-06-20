@@ -12,8 +12,8 @@
 #include "TH1.h"
 #include "branches.hpp"
 #include "color.hpp"
-#include "reaction.hpp"
 #include "histogram.hpp"
+#include "reaction.hpp"
 
 size_t run(std::shared_ptr<TChain> _chain, std::shared_ptr<Histogram> _hists) {
   size_t num_of_events = (int)_chain->GetEntries();
@@ -21,9 +21,7 @@ size_t run(std::shared_ptr<TChain> _chain, std::shared_ptr<Histogram> _hists) {
 
   for (size_t current_event = 0; current_event < num_of_events; current_event++) {
     _chain->GetEntry(current_event);
-    data->gpart();
-    //std::cout << data->gpart() << std::endl;
-    /*
+
     if (data->gpart() <= 1) continue;
     bool elec = true;
     elec &= (data->charge(0) == NEGATIVE);
@@ -43,8 +41,7 @@ size_t run(std::shared_ptr<TChain> _chain, std::shared_ptr<Histogram> _hists) {
       }
     }
 
-    if (event->SingleP()) _hists->WvsQ2_Fill(event->W(), event->Q2());
-   */
+    _hists->WvsQ2_Fill(event->W(), event->Q2());
   }
 
   return num_of_events;

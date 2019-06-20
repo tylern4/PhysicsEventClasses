@@ -1,9 +1,9 @@
-#include "clipp.h"
 #include "main.hpp"
 #include <future>
 #include <thread>
+#include "clipp.h"
 
-#define NUM_THREADS 4
+#define NUM_THREADS 2
 
 int main(int argc, char **argv) {
   ROOT::EnableThreadSafety();
@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
   } else {
     return 1;
   }
-  
+
   std::future<size_t> t[NUM_THREADS];
   size_t events = 0;
 
@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
   for (size_t i = 0; i < NUM_THREADS; i++) {
     events += t[i].get();
   }
-  std::cout.imbue(std::locale("")); // Puts commas in
+  std::cout.imbue(std::locale(""));  // Puts commas in
   std::chrono::duration<double> elapsed_full = (std::chrono::high_resolution_clock::now() - start);
   std::cout << RED << elapsed_full.count() << " sec" << DEF << std::endl;
   std::cout << BOLDYELLOW << events / elapsed_full.count() << " Hz" << DEF << std::endl;
