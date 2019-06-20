@@ -1,11 +1,6 @@
-UNAME := $(shell uname)
-ifeq ($(UNAME), Linux)
-    FOPENMP = -fopenmp -lgfortran
-endif
-
 ROOTLIBS	= $(shell root-config --libs)
 CXX = $(shell root-config --cxx)
-CXXFLAGS = -O3 -march=native -fPIC -w -g $(FOPENMP) $(shell root-config --cflags)
+CXXFLAGS = -O3 -march=native -fPIC -w -g $(shell root-config --cflags)
 
 SRCDIR   = src
 OBJDIR   = obj
