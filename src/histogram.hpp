@@ -11,6 +11,7 @@
 #include <iostream>
 #include <mutex>
 #include <thread>
+#include "TCanvas.h"
 #include "TDirectory.h"
 #include "TF1.h"
 #include "TFile.h"
@@ -19,7 +20,6 @@
 #include "TH2.h"
 #include "TH3.h"
 #include "THn.h"
-#include "TCanvas.h"
 #include "branches.hpp"
 #include "color.hpp"
 
@@ -40,6 +40,7 @@ class Histogram {
 
   TH2D_ptr WvsQ2_hist = std::make_shared<TH2D>("WvsQ2_hist", "W vs Q^{2}", BINS, w_min, w_max, BINS, q2_min, q2_max);
   TH1D_ptr W_hist = std::make_shared<TH1D>("W", "W", BINS, w_min, w_max);
+  std::vector<TH1D_ptr> W_hist_sec;
   TH1D_ptr Q2_hist = std::make_shared<TH1D>("Q2", "Q2", BINS, q2_min, w_max);
 
  public:
@@ -48,7 +49,8 @@ class Histogram {
   void Write();
 
   // W and Q^2
-  void WvsQ2_Fill(float W, float Q2);
+  void WvsQ2_make_hists();
+  void WvsQ2_Fill(float W, float Q2, int sec);
   void WvsQ2_Write();
 };
 
