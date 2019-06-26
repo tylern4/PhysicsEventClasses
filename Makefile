@@ -1,6 +1,6 @@
 ROOTLIBS	= $(shell root-config --libs)
 CXX = $(shell root-config --cxx)
-CXXFLAGS = -O3 -march=native -fPIC -w -g $(shell root-config --cflags)
+CXXFLAGS = -Ofast -march=native -fPIC -w -g $(shell root-config --cflags)
 
 SRCDIR   = src
 OBJDIR   = obj

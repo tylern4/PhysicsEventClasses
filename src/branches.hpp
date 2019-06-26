@@ -258,6 +258,7 @@ class Branches12 {
   float vz(int i);
   int charge(int i);
   float beta(int i);
+  float chi2pid(int i);
   // TODO: Need to fill in all the banks
 };
 
