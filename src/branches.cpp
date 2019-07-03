@@ -221,6 +221,7 @@ void Branches12::init() {
   _ft_hodo_radius = 0;
 
   _tree->SetBranchStatus("*", 0);
+  /*
   _tree->SetBranchAddress("NRUN", &_NRUN);
   _tree->SetBranchAddress("NEVENT", &_NEVENT);
   _tree->SetBranchAddress("EVNTime", &_EVNTime);
@@ -234,6 +235,7 @@ void Branches12::init() {
   _tree->SetBranchAddress("NPGP", &_NPGP);
   _tree->SetBranchAddress("LT", &_LT);
   _tree->SetBranchAddress("PTIME", &_PTIME);
+  */
   _tree->SetBranchAddress("pid", &_pid);
   _tree->SetBranchAddress("p", &_p);
   _tree->SetBranchAddress("p2", &_p2);

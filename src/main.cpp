@@ -3,7 +3,7 @@
 #include <thread>
 #include "clipp.h"
 
-#define NUM_THREADS 2
+#define NUM_THREADS 8
 
 int main(int argc, char **argv) {
   // Need this to make sure root doesn't break
