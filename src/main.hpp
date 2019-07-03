@@ -61,7 +61,7 @@ size_t run(std::shared_ptr<TChain> _chain, std::shared_ptr<Histogram> _hists, in
     }
 
     // Check the reaction class what kind of even it is and fill the appropriate histograms
-    _hists->WvsQ2_Fill(event->W(), event->Q2(), 0);
+    _hists->WvsQ2_Fill(event->W(), event->Q2(), data->dc_sec(0));
   }
 
   // Return the total number of events

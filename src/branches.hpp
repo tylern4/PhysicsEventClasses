@@ -259,7 +259,24 @@ class Branches12 {
   int charge(int i);
   float beta(int i);
   float chi2pid(int i);
-  // TODO: Need to fill in all the banks
+  int status(int i);
+  // DC
+  int dc_sec(int i);
+  float dc_px(int i);
+  float dc_py(int i);
+  float dc_pz(int i);
+  float dc_vx(int i);
+  float dc_vy(int i);
+  float dc_vz(int i);
+  float dc_r1_x(int i);
+  float dc_r1_y(int i);
+  float dc_r1_z(int i);
+  float dc_r2_x(int i);
+  float dc_r2_y(int i);
+  float dc_r2_z(int i);
+  float dc_r3_x(int i);
+  float dc_r3_y(int i);
+  float dc_r3_z(int i);
 };
 
 #endif

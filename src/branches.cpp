@@ -520,25 +520,110 @@ float Branches12::chi2pid(int i) {
     return _chi2pid->at(i);
 }
 
-//_tree->SetBranchAddress("status", &_status);
+int Branches12::status(int i) {
+  if (i >= _pid->size())
+    return -9999;
+  else
+    return _status->at(i);
+}
 
+int Branches12::dc_sec(int i) {
+  if (i >= _dc_sec->size())
+    return -9999;
+  else
+    return _dc_sec->at(i);
+}
+float Branches12::dc_px(int i) {
+  if (i >= _dc_sec->size())
+    return NAN;
+  else
+    return _dc_px->at(i);
+}
+float Branches12::dc_py(int i) {
+  if (i >= _dc_sec->size())
+    return NAN;
+  else
+    return _dc_py->at(i);
+}
+float Branches12::dc_pz(int i) {
+  if (i >= _dc_sec->size())
+    return NAN;
+  else
+    return _dc_pz->at(i);
+}
+float Branches12::dc_vx(int i) {
+  if (i >= _dc_sec->size())
+    return NAN;
+  else
+    return _dc_vx->at(i);
+}
+float Branches12::dc_vy(int i) {
+  if (i >= _dc_sec->size())
+    return NAN;
+  else
+    return _dc_vy->at(i);
+}
+float Branches12::dc_vz(int i) {
+  if (i >= _dc_sec->size())
+    return NAN;
+  else
+    return _dc_vz->at(i);
+}
+float Branches12::dc_r1_x(int i) {
+  if (i >= _dc_sec->size())
+    return NAN;
+  else
+    return _dc_r1_x->at(i);
+}
+float Branches12::dc_r1_y(int i) {
+  if (i >= _dc_sec->size())
+    return NAN;
+  else
+    return _dc_r1_y->at(i);
+}
+float Branches12::dc_r1_z(int i) {
+  if (i >= _dc_sec->size())
+    return NAN;
+  else
+    return _dc_r1_z->at(i);
+}
+float Branches12::dc_r2_x(int i) {
+  if (i >= _dc_sec->size())
+    return NAN;
+  else
+    return _dc_r2_x->at(i);
+}
+float Branches12::dc_r2_y(int i) {
+  if (i >= _dc_sec->size())
+    return NAN;
+  else
+    return _dc_r2_y->at(i);
+}
+float Branches12::dc_r2_z(int i) {
+  if (i >= _dc_sec->size())
+    return NAN;
+  else
+    return _dc_r2_z->at(i);
+}
+float Branches12::dc_r3_x(int i) {
+  if (i >= _dc_sec->size())
+    return NAN;
+  else
+    return _dc_r3_x->at(i);
+}
+float Branches12::dc_r3_y(int i) {
+  if (i >= _dc_sec->size())
+    return NAN;
+  else
+    return _dc_r3_y->at(i);
+}
+float Branches12::dc_r3_z(int i) {
+  if (i >= _dc_sec->size())
+    return NAN;
+  else
+    return _dc_r3_z->at(i);
+}
 /*
-_tree->SetBranchAddress("dc_sec", &_dc_sec);
-_tree->SetBranchAddress("dc_px", &_dc_px);
-_tree->SetBranchAddress("dc_py", &_dc_py);
-_tree->SetBranchAddress("dc_pz", &_dc_pz);
-_tree->SetBranchAddress("dc_vx", &_dc_vx);
-_tree->SetBranchAddress("dc_vy", &_dc_vy);
-_tree->SetBranchAddress("dc_vz", &_dc_vz);
-_tree->SetBranchAddress("dc_r1_x", &_dc_r1_x);
-_tree->SetBranchAddress("dc_r1_y", &_dc_r1_y);
-_tree->SetBranchAddress("dc_r1_z", &_dc_r1_z);
-_tree->SetBranchAddress("dc_r2_x", &_dc_r2_x);
-_tree->SetBranchAddress("dc_r2_y", &_dc_r2_y);
-_tree->SetBranchAddress("dc_r2_z", &_dc_r2_z);
-_tree->SetBranchAddress("dc_r3_x", &_dc_r3_x);
-_tree->SetBranchAddress("dc_r3_y", &_dc_r3_y);
-_tree->SetBranchAddress("dc_r3_z", &_dc_r3_z);
 _tree->SetBranchAddress("cvt_px", &_cvt_px);
 _tree->SetBranchAddress("cvt_py", &_cvt_py);
 _tree->SetBranchAddress("cvt_pz", &_cvt_pz);
