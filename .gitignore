@@ -37,3 +37,7 @@ bin/*
 *.app
 
 *.root
+*.idea
+*.vscode
+build
+cmake-build-debug
