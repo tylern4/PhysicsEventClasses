@@ -4,7 +4,7 @@
 #include "TROOT.h"
 #include "clipp.h"
 
-#define NUM_THREADS 8
+static const short NUM_THREADS = (getenv("NUM_THREADS") != NULL) ? atoi(getenv("NUM_THREADS")) : 8;
 
 int main(int argc, char **argv) {
   // Need this to make sure root doesn't break
